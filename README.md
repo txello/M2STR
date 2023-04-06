@@ -1,0 +1,2 @@
+# MSTR
+Message hash algorithm
