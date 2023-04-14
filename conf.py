@@ -14,7 +14,7 @@ def word():
     words_EN.update(words_sp)
     return words_EN
 def salt():
-    salt = "change me"
+    salt = "iusdjfhdusdjfhdussdfsdfsdfsdfsdfsdfsdfsdfdjfhdusdjfhdusdjfhdusdjfhdusdjfhdusdjfhdusdjfhdusdjfhdusdjfhdusdjfhdusdjfhdusdjfhdusdjfhdusdjfhdusdjfhd"
     # напишите секретный ключ(соль).
     # символами в соли могут быть только те, которые есть в вашем словаре символов.
     return salt
