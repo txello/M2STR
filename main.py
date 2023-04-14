@@ -1,7 +1,7 @@
 import conf, lib
 ###     name   - M2STR
 ###     author - txello
-###     version - 0.1b
+###     version - 1.0b
 def encode(w_input):
     try:
         salt = list(conf.salt())
