@@ -1,20 +1,25 @@
 import conf, lib
 ###     name   - M2STR
 ###     author - txello
-###     version - 1.0b
-def encode(w_input):
+###     version - 1.1b
+def encode(w_input, words = {}, salt = ''):
     try:
-        salt = list(conf.salt())
-        if len(salt) == 0: raise lib.Error("Вы ввели пустую соль!")
-        # salt (( list[str] )) - соль для шифрования.
+        salt = list(conf.salt()) if len(salt) == 0 else list(conf.salt(salt))
+        if len(salt) == 0: raise lib.Error("Error #1: Вы ввели пустую соль!")
+        # salt - секретный ключ(соль) для шифрования.
+        # если указана пользовательская соль, то заменяется.
+        
+        words = conf.word() if len(words) == 0 else conf.word(words)
+        # words - словарь символов.
+        # если указан пользовательский словарь символов, то заменяется.
 
         for i in range(len(salt)):
         # len(salt) - количество символов в соли для шифрования.
-            salt[i] = conf.word()[salt[i]]
+            salt[i] = words[salt[i]]
             # salt[i] - определённый символ в соли.
             # пример: salt[0] (('q')) = words['q'] (( '43' ))
             # теперь соль стала цифрами из словаря слов.
-
+            
         w_input = list(w_input)
         if len(w_input) == 0: raise lib.Error("Вы ввели пустое сообщение!")
         # w_input - список из входного сообщения.
@@ -22,7 +27,7 @@ def encode(w_input):
 
         for i in range(len(w_input)):
         # len(w_input) - количество символов в списке из входного сообщения.
-            w_input[i] = conf.word()[w_input[i]]
+            w_input[i] = words[w_input[i]]
             # w_input[i] - определённый символ в списке.
             # пример: w_input[0] (('1')) = words['1'] (( '53' ))
             # теперь входное сообщение стало цифрами из словаря слов.
