@@ -25,7 +25,7 @@ def euclid_nums(x):
     x = 3 + (x * 2)
     while snum(x) != True:
         x += 1
-    return(x)
+    return x
 def euclid(i):
     num1 = euclid_nums(euclid_nums(i))
     num2 = euclid_nums(euclid_nums(num1))

@@ -16,5 +16,7 @@ def word(i = {}):
     else:
         return i
 def salt(i = ''):
+    # секретный ключ(соль):
+    # ВНИМАНИЕ! вводите в соль только то, что присутствует в вашем словаре символов.
     salt = "change me" if len(i) == 0 else i
     return salt
