@@ -2,7 +2,7 @@ from conf import Conf
 from lib import Math, Error
 ###     name   - M2STR
 ###     author - txello
-###     version - 1.2b
+###     version - 1.3b
 class M2STR:
     'M2STR - симметричное шифрование.'
     def encode(w_input, words = {}, salt = '') -> list:
